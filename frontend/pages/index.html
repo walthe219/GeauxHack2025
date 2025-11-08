@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
     <title>Main</title>
 </head>
 
@@ -23,16 +30,14 @@
             <!-- Game content will be loaded here -->
             <h1>Game Screen</h1>
             <h2 id= "usrNmDisplay"> plcHldrText </h2>
-            <iframe width="425" height="350" 
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-91.22600555419923%2C30.38472258144958%2C-91.16764068603516%2C30.427361303226743&amp;layer=mapnik" 
-            style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?#map=14/30.40604/-91.19682">View Larger Map</a></small>
 
-            
+            <div id="map" style="width: 600px; height: 400px;"></div>
         </div>
          
     </div>
 
     <script src="../../backend/src/main.js"></script>
+    <script src = "../../backend/src/mapMaker.js"></script>
     <link rel="stylesheet" href="../assets/main.css">
 </body>
 </html>

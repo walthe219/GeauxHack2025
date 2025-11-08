@@ -18,32 +18,14 @@ function loadGame()
     
     gameScreen.style.display = 'inline-block';
     console.log("Game Loaded");
+    //mapUpdate();
     setInterval(mapUpdate, 1000); // Update map every 5 seconds
 }
 function mapUpdate()
 {
+    
     console.log("Map Updated");
-    findLocation();
-}
-
-function findLocation()
-{
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(logPosition);
-    } else
-    {
-        console.log("Geolocation is not supported by this browser.");
-    }
-}
-
-function logPosition(position)
-{
-    console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
-}
-
-function geoLocateGrass()
-{
-    console.log("GeoLocateGrass function called");
+    findLocation(); 
 }
 
 //Pokemon go for touching grass
