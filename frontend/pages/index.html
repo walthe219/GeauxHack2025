@@ -11,6 +11,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+    <script src="https://unpkg.com/osmtogeojson@3.0.0-beta.5/osmtogeojson.js"></script>
+    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 
     <title>Main</title>
 </head>
@@ -30,7 +32,7 @@
             <!-- Game content will be loaded here -->
             <h1>Game Screen</h1>
             <h2 id= "usrNmDisplay"> plcHldrText </h2>
-
+            <h3 id= "pointsDisplay"> Points: 0 </h3>
             <div id="map" style="width: 600px; height: 400px;"></div>
         </div>
          
@@ -38,6 +40,8 @@
 
     <script src="../../backend/src/main.js"></script>
     <script src = "../../backend/src/mapMaker.js"></script>
+    <script src = "../../backend/src/dataFetch.js"></script>
+    <script src = "../../backend/src/pointUpdate.js"></script>
     <link rel="stylesheet" href="../assets/main.css">
 </body>
 </html>
