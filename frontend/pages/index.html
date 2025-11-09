@@ -15,14 +15,18 @@
     <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 
     <title>Main</title>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    </style>
 </head>
 
 <body>
-
+    <h1>GoGrass</h1>
     <div>
         <div style = "display: inline-block;" id = "startScreen">
             <!-- Start screen content will be loaded here -->
-            <h1>GoGrass</h1>
+            
             <input type= "text" id="username" placeholder="Username">
             <button id = "startButton"> Start </button>
         
@@ -31,12 +35,21 @@
         </div>
         <div style = "display: none;" id = "gameScreen">
             <!-- Game content will be loaded here -->
-            <h1>Game Screen</h1>
+            <!--
             <h2 id= "usrNmDisplay"> plcHldrText </h2>
             <h2 id="onGrass"></h2>
             <h3 id= "pointsDisplay"> Points: 0 </h3>
+            -->
+            <div>
+                <ul class = "infoList"> 
+                    <li id= "usrNmDisplay">Username: placeholder</li> 
+                    <li id= "onGrass">Checking Position...</li> 
+                    <li id= "pointsDisplay">Score: 0 </li> 
+                </ul>
+            </div>
+            
             <div id="map" style="width: 600px; height: 400px;">Map Loading...</div>
-            <button id = "locationButton" script = "">Center my location</button>
+            <button id = "locationButton">Center my location</button>
         </div>
          
     </div>

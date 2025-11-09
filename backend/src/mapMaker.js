@@ -6,18 +6,17 @@ var polygons = []; // Store grass/park polygons for point-in-polygon checking
 
 function makeMapDisply(position) 
 {
-    // Override the position with test coordinates
+    
+    /*// Override the position with test coordinates
     position = {
         coords: {
             latitude: 30.414952,
             longitude: -91.177130
         }
-    };
+    };*/
     setPlayerLocation(position);
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
-    lat = 30.414952 ;
-    lon = -91.177130;
     console.log(`Latitude: ${lat} Longitude: ${lon}`);
     if(map==null) {
         map = L.map('map').setView([lat, lon], 15);

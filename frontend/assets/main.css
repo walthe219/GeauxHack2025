@@ -14,4 +14,14 @@ body{
     text-align: center;
     background-color: rgb(47, 87, 60);
     color: white;
+    font-family: 'Inter', sans-serif;
+}
+.infoList{
+    list-style: none;
+    justify-content: center;
+    display: flex;
+    gap: 25px;
+    font-size: 20px;
+    background-color: rgba(228, 226, 226, 0.9);
+    color: rgb(26, 35, 26)
 }
