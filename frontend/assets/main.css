@@ -12,4 +12,6 @@ button{
 }
 body{
     text-align: center;
+    background-color: rgb(47, 87, 60);
+    color: white;
 }
