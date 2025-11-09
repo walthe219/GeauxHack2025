@@ -1,17 +1,20 @@
+import { getDocFromFirebase, addToFirebase, upsertToFirebase } from './firebase.js';
 
 function packageUserData(username, score){
     return {
         username: username,
-        score: score,
+        score: parseInt(score),
     };
 }
 async function getUserData(username){
-    return await firebase.getDocFromFirebase(username);
+    return await getDocFromFirebase(username);
 }
 
 async function addUser(username){
-    return await firebase.addToFirebase(packageUserData(username, 0));
+    return await addToFirebase(packageUserData(username, 0));
 }
 async function updateUserData(username,newData){
-    return await firebase.upsertToFirebase(username, newData);
+    return await upsertToFirebase(username, newData);
 }
+
+export { packageUserData, getUserData, addUser, updateUserData };

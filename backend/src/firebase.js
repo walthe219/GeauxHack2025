@@ -1,7 +1,7 @@
 
 //Code from WebDeb WorkShop 
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js'
-import * as firestore from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js';
+import * as firestore from 'https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js'
 
 const firebaseConfig = {
     apiKey: "AIzaSyCpnfGbZ06KBSBsu3RlLOIdyA5-ljPMTJg",
@@ -19,7 +19,8 @@ const table = 'UserData';
 
 async function addToFirebase(object) {
   try {
-    await firestore.addDoc(firestore.collection(database, table), object);
+    //await firestore.addDoc(firestore.collection(database, table), object);
+    await firestore.setDoc(firestore.doc(database, table, object.username), object);
   } catch (error) {
     console.error("Error adding to document: ", error);
   }
@@ -64,6 +65,7 @@ async function getDocFromFirebase(docId) {
       data: docSnap.data()
     })
   }
+  return null;
 }
 
 async function getAllDataFromFirebase() {
