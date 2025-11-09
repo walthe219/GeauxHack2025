@@ -1,4 +1,5 @@
-
+import { map, makeMapDisply  } from './mapMaker.js';
+import { setPolygons } from './appState.js';
 const south = 30.39139;
 const west = -91.20918;
 const north = 30.43212;
@@ -20,7 +21,6 @@ const defaultTags = [
   'landuse=grass',
   'natural=grassland',
   'natural=wood',
-  'leisure=beach_resort',
   'landuse=village_green',
   'leisure=recreation_ground',
   'leisure=sports_centre',
@@ -111,12 +111,21 @@ async function fetchGrass(map, tags = null)
 }
 
 function createPolygonList(geojson) {
-    polygons = [];
-    for (const feature of geojson.features) {
-        if (feature.geometry && (feature.geometry.type === 'Polygon' || feature.geometry.type === 'MultiPolygon')) {
-            polygons.push(feature);
-        }
+  // build a local array and pass it to the map module via the setter to avoid leaking globals
+  const polys = [];
+  if (!geojson || !Array.isArray(geojson.features)) {
+    console.warn('createPolygonList received invalid geojson', geojson);
+    setPolygons(polys);
+    return;
+  }
+
+  for (const feature of geojson.features) {
+    if (feature.geometry && (feature.geometry.type === 'Polygon' || feature.geometry.type === 'MultiPolygon')) {
+      polys.push(feature);
     }
-   setPolygons(polygons);
+  }
+  setPolygons(polys);
 
 }
+
+export { fetchGrass };

@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <h1>GoGrass</h1>
+    <h1>GoGrass.io</h1>
     <div>
         <div style = "display: inline-block;" id = "startScreen">
             <!-- Start screen content will be loaded here -->
@@ -54,10 +54,12 @@
          
     </div>
 
-    <script src="../../backend/src/main.js"></script>
-    <script src = "../../backend/src/mapMaker.js"></script>
-    <script src = "../../backend/src/dataFetch.js"></script>
-    <script src = "../../backend/src/pointUpdate.js"></script>
+    <script type="module" src="../../backend/src/firebase.js"></script>
+    <script type="module" src="../../backend/src/databaseInterface.js"></script>
+    <script type="module" src="../../backend/src/main.js"></script>
+    <script type="module" src="../../backend/src/mapMaker.js"></script>
+    <script type="module" src="../../backend/src/dataFetch.js"></script>
+    <script type="module" src="../../backend/src/pointUpdate.js"></script>
     <link rel="stylesheet" href="../assets/main.css">
 </body>
 </html>

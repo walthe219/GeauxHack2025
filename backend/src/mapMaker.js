@@ -1,19 +1,23 @@
+import { fetchGrass } from './dataFetch.js';
+import { setPlayerLocation, setPolygons } from './appState.js';
 
 var map = null;
 var marker = null;
-var polygons = []; // Store grass/park polygons for point-in-polygon checking
 
 
 function makeMapDisply(position) 
 {
-    
-    /*// Override the position with test coordinates
+    /*
+    // Override the position with test coordinates
+    let lat = 30.414952;
+    let lon = -91.177130;
     position = {
         coords: {
-            latitude: 30.414952,
-            longitude: -91.177130
+            latitude: lat,
+            longitude: lon
         }
     };*/
+    // update shared app state
     setPlayerLocation(position);
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
@@ -28,7 +32,7 @@ function makeMapDisply(position)
     else marker.setLatLng([lat, lon]);
 }
 
-function recenterPlayer(){
+function recenterPlayer(playerLocation){
     map.setView([playerLocation.coords.latitude, playerLocation.coords.longitude], 15);
 }
 
@@ -47,6 +51,9 @@ function logPosition(position)
     console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
 }
 
-function setPolygons(polys){
-    polygons = polys;
+function setMapPolygons(polys){
+    // store polygons in app state
+    setPolygons(polys);
 }
+
+export { map, makeMapDisply, setMapPolygons as setPolygons, findLocation, recenterPlayer };

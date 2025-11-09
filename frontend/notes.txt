@@ -1,0 +1,6 @@
+Presenation Workshop
+
+Clear convey project idea
+Tech Stack w/ name and logo, apis, databases
+show app in action prerecord or live, strong points, hide weaknesses
+go over setbacks and future plans
